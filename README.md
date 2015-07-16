@@ -1,6 +1,6 @@
 # pounce
 
-(http://media.giphy.com/media/aGPrYkjsWOzSg/giphy.gif)
+![For inspiration](http://media.giphy.com/media/aGPrYkjsWOzSg/giphy.gif)
 
 Main Views
 - Homepage w/ search bar & random products
