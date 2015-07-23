@@ -22,6 +22,9 @@ class WantsController < ApplicationController
 
   # Delete the want
   def destroy
+    @want = Want.find(params[:want_id])
+    @want.destroy
+    redirect_to user_wants_path(@user)
   end
 
   # Display all wants for a particular user
