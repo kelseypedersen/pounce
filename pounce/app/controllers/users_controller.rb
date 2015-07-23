@@ -4,10 +4,6 @@ class UsersController < ApplicationController
   def welcome
   end
 
-  # Page user sees when signing up
-  def new
-  end
-
   # Post route to create new user in database
   def create
     @user = User.new(name: params[:name], email: params[:email], phone_number: params[:phone_number], password: params[:password])
