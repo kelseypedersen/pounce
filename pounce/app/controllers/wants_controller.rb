@@ -14,14 +14,24 @@ class WantsController < ApplicationController
 
   # Get route to view the want before editing
   def edit
+    get_user
+    @want = Want.find(params[:want_id])
+    @product = Product.where(id: @want.product_id)
   end
 
   # Updates the want in the database
   def update
+    @want = Want.update(max_price: params[:max_price], expiration: params[:expiration])
+    if @want.save
+      redirect_to user_wants_path(@user)
+    end
   end
 
   # Delete the want
   def destroy
+    @want = Want.find(params[:want_id])
+    @want.destroy
+    redirect_to user_wants_path(@user)
   end
 
   # Display all wants for a particular user
