@@ -25,8 +25,4 @@ class ProductsController < ApplicationController
      @product = HTTParty.get("http://api.shopstyle.com/api/v2/products/#{params[:id].to_i}?pid=uid5001-30368749-95")
   end
 
-  # Used to query database for particular items
-  def search
-  end
-
 end
