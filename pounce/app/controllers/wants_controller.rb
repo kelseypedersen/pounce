@@ -37,7 +37,8 @@ class WantsController < ApplicationController
   # Display all wants for a particular user
   def index
     get_user
-    @user_wants = Product.where(id: Want.where(user_id: @user.id).pluck(:product_id))
+    @fulfilled_wants = Product.where(id: Want.where(user_id: @user.id).where(fulfilled: true).pluck(:product_id))
+    @unfulfilled_wants = Product.where(id: Want.where(user_id: @user.id).where(fulfilled: true).pluck(:product_id))
   end
 
 end
