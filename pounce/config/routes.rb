@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   root 'users#welcome'
 
   resources :users, only: [:welcome, :new, :create, :show] do
-    resources :products, only: [:index, :show, :search]
+    resources :products, only: [:index, :show]
     resources :wants , only: [:create, :edit, :update, :destroy, :index]
   end
-  resources :products, only: [:new, :create, :destroy]
+  resources :products, only: [:new, :create, :destroy, :search]
 
   # Example of regular route:
     # get 'products/:id' => 'catalog#view'
