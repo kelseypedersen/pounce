@@ -1,17 +1,5 @@
 class ProductsController < ApplicationController
 
-  # Used by background job to create products
-  def new
-  end
-
-  # Used by background job to create products
-  def create
-  end
-
-  # Used by background job to create products
-  def destroy
-  end
-
   # Show many items following a search
   def index
     raw_input = params[:search].to_s

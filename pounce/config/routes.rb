@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: [:welcome, :new, :create, :show] do
     resources :wants , only: [:create, :edit, :update, :destroy, :index]
   end
-  resources :products, only: [:new, :create, :destroy, :index, :show]
+  resources :products, only: [:index, :show]
 
   # Example of regular route:
     # get 'products/:id' => 'catalog#view'
