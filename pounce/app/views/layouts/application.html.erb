@@ -7,8 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<header class="header">
+		<div class="logo fl-l pd-side-30">Logo</div>
+		<nav class="nav fl-r pd-side-30">
+			<ul>
+				<li>Signin</li>
+				<li>Signup</li>
+				<li>About</li>
+			</ul>
+		</nav>
+	</header>
 
-<%= yield %>
+		<%= yield %>
+
 
 </body>
 </html>

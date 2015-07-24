@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
     raw_input = params[:search].to_s
     formatted_input = raw_input.gsub(" ", "+")
 
-    @products = HTTParty.get("http://api.shopstyle.com/api/v2/products?pid=uid5001-30368749-95&fts='#{formatted_input}'&offset=0&limit=20")
+    @products = HTTParty.get("http://api.shopstyle.com/api/v2/products?pid=uid5001-30368749-95&fts='#{formatted_input}'&offset=0&limit=20")["products"]
   end
 
   # Details about a particular product
