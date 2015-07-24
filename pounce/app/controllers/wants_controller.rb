@@ -3,9 +3,9 @@ class WantsController < ApplicationController
   # Post route to create a new want
   def create
     get_user
-    @product = Product.new(shopstyle_id: params[:shopstyle_id], title: params[:title], description: params[:description], current_price: params[:current_price])
+    @product = Product.new(shopstyle_id: params[:shopstyle_id].to_i, title: params[:title], description: params[:description], current_price: params[:current_price].to_f)
     if @product.save
-      @want = Want.new(user_id: @user.id, product_id: @product.id, max_price: params[:max_price], expiration: params[:expiration])
+      @want = Want.new(user_id: @user.id, product_id: @product.id, max_price: params[:max_price].to_f, expiration: params[:expiration])
       if @want.save
         redirect_to user_wants_path(@user)
       end
@@ -21,7 +21,7 @@ class WantsController < ApplicationController
 
   # Updates the want in the database
   def update
-    @want = Want.update(max_price: params[:max_price], expiration: params[:expiration])
+    @want = Want.update(max_price: params[:max_price].to_f, expiration: params[:expiration])
     if @want.save
       redirect_to user_wants_path(@user)
     end
