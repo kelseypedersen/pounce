@@ -10,6 +10,9 @@ body {
 	background-color:#f9f9f9;
 }
 
+
+/*------------------ float ---------------------*/
+
 .fl-l {
 	float:left;
 }
@@ -22,10 +25,20 @@ body {
 	clear:both;
 }
 
+
+/*------------------ Basic Font setting ---------------------*/
+
 .h1 {
 	font-weight:700;
 	font-size:32px;
 }
+
+.label {
+	color: #757575;
+	font-size:14px;
+	font-weight:700;
+}
+
 
 .pd-side-30 {
 	padding: 0px 5%;
@@ -41,7 +54,7 @@ body {
 
 
 
-
+/*------------------header---------------------*/
 
 .logo {
 	line-height: 60px;
@@ -64,6 +77,9 @@ body {
 	border-bottom: 1px solid #EEEEEE;
 	background-color: white;
 }
+
+
+/*------------------ Main ---------------------*/
 
 
 .main {
@@ -104,24 +120,24 @@ body {
 .top-title {
 }
 
-input[type="text"] {
+
+
+.top-container input[type="text"] {
 	width:250px;
 	height:50px;
-	padding:0px 25px;
+	padding:0px 10px;
 	color: #546E7A;
-	border:none;
-	outline:none;
 }
 
-input[type="submit"]{
+.top-container input[type="submit"]{
 	width:90px;
 	height:50px;
-	border:none;
-	outline:none;
+	margin-left:-3px;
+	margin-top:-2px;
 	background-color:#0288D1;
 }
 
-input[type="submit"]:hover{
+.top-container input[type="submit"]:hover{
 	background-color:#039BE5;
 }
 
@@ -131,11 +147,23 @@ input[type="submit"]:hover{
 }
 
 .category .list {
+	margin:5px;
 	width:300px;
+	height:300px;
 }
 
 .category .list h3{
-	position:relative;
+	position:absolute;
+	color:white;
+	padding:0;
+	margin:0;
+	top:50%;
+	left:40%;
+}
+
+.category .list .inner {
+	width:300px;
+	height:300px;
 }
 
 .category .list .city{
@@ -203,7 +231,7 @@ input[type="submit"]:hover{
 
 
 /*Plugin*/
-
+/*
 #lean_overlay {
     position: fixed;
     z-index:100;
@@ -215,3 +243,4 @@ input[type="submit"]:hover{
     display: none;
 }
 
+*/

@@ -323,6 +323,21 @@ input {
   line-height: normal;
 }
 
+input[type="text"] {
+  border:1px solid lightgray;
+  outline:none;
+}
+
+input[type="password"] {
+  border:1px solid lightgray;
+  outline:none;
+}
+
+input[type="submit"] {
+  border:none;
+  outline:none;
+}
+
 /**
  * It's recommended that you don't attempt to style these elements.
  * Firefox's implementation doesn't respect box-sizing, padding, or width.

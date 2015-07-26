@@ -1,0 +1,81 @@
+
+.button {
+	text-decoration:none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+
+.overlay {
+  position: absolute;
+  heigth:100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /*background: rgba(0, 0, 0, 0.7);*/
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  heigth:300px;
+  padding: 20px;
+  background: #fff;
+  box-shadow:1px 1px 1px 1px #EEEEEE;
+  border-radius: 5px;
+  width: 30%;
+  min-width:320px;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup-form {
+
+}
+
+.popup-form input[type="text"] {
+  height:30px;
+  width:200px;
+  padding:2px 15px;
+}
+
+.popup-form input[type="password"] {
+  height:30px;
+  width:200px;
+  padding:2px 15px;
+}
+
+.popup-form input[type="submit"]{
+  height:20px;
+  padding:10px 25px;
+  color:white;
+  background-color:#0288D1;
+}
+
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: orange;
+}
+.popup .content {
+  overflow: auto;
+}
+
+.form-popup {
+  height:100%;
+}
