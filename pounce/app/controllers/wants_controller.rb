@@ -1,20 +1,19 @@
 class WantsController < ApplicationController
+   before_action :current_user
 
   # Post route to create a new want
   def create
-    get_user
     @product = Product.new(shopstyle_id: params[:shopstyle_id].to_i, title: params[:title], description: params[:description], current_price: params[:current_price].to_f)
     if @product.save
-      @want = Want.new(user_id: @user.id, product_id: @product.id, max_price: params[:max_price].to_f, expiration: params[:expiration])
+      @want = Want.new(user_id: @current_user.id, product_id: @product.id, max_price: params[:max_price].to_f, expiration: params[:expiration])
       if @want.save
-        redirect_to user_wants_path(@user)
+        redirect_to user_wants_path(@current_user)
       end
     end
   end
 
   # Get route to view the want before editing
   def edit
-    get_user
     @want = Want.find(params[:want_id])
     @product = Product.where(id: @want.product_id)
   end
@@ -23,7 +22,7 @@ class WantsController < ApplicationController
   def update
     @want = Want.update(max_price: params[:max_price].to_f, expiration: params[:expiration])
     if @want.save
-      redirect_to user_wants_path(@user)
+      redirect_to user_wants_path(@current_user)
     end
   end
 
@@ -31,14 +30,13 @@ class WantsController < ApplicationController
   def destroy
     @want = Want.find(params[:want_id])
     @want.destroy
-    redirect_to user_wants_path(@user)
+    redirect_to user_wants_path(@current_user)
   end
 
   # Display all wants for a particular user
   def index
-    get_user
-    @fulfilled_wants = Product.where(id: Want.where(user_id: @user.id).where(fulfilled: true).pluck(:product_id))
-    @unfulfilled_wants = Product.where(id: Want.where(user_id: @user.id).where(fulfilled: true).pluck(:product_id))
+    @fulfilled_wants = Product.where(id: Want.where(user_id: @current_user.id).where(fulfilled: true).pluck(:product_id))
+    @unfulfilled_wants = Product.where(id: Want.where(user_id: @current_user.id).where(fulfilled: true).pluck(:product_id))
   end
 
 end
