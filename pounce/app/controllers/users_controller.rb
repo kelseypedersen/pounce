@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   # Initial splash page with login/signup buttons
   def welcome
+    @user
   end
 
   # Post route to create new user in database

@@ -1,27 +1,51 @@
 <!-- This is the page the user will see after clicking on a specific product. Product will contain information about the particular product. -->
-<p> <%= @product %> </p>
+
 <main class="main">
 <div class="left fl-l">
-	<img src="http://images.fameandpartners.com/spree/products/13083/large/4B376-BLACK-CROP.jpg?1433387571" alt="">
+	<img src="<%= @product['image']['sizes']['XLarge']['url'] %>" alt="">
 	<!-- <img src="http://www.shoebuy.com/pi/rieke/jb/rieke617173_303937_jb.jpg" alt=""> -->
 </div>
 
 
 <div class="right fl-l">
 	<div class="inner cl-b">
-		<div class="add-box fl-l">
-			<p class="add-image">&#9733;</p>
-			<p class="add-text">Add</p>
-		</div>
+		<a href="#popup3">
+			<div class="add-box fl-l">
+				<p class="add-image">&#9733;</p>
+				<p class="add-text">Add</p>
+			</div>
+		</a>
 		<div class="add-box fl-l">
 			<p class="add-image">&#9733;</p>
 			<p class="add-text">Visit web site</p>
 		</div>
 		<div class="box-description cl-b">
-			<h1 class="h2">Self-Portrait Macramé Lace Midi Dress</h1>
-			<p><h4 class="h4">Brand Name</h4></p>
-			<p>"Self-Portrait Macramé lace midi dress, Our Junior Buyer Abigail Routley loves the perfect cutouts on this macramé lace midi dress by Self-Portrait. It has a slim-fitting bodice and a grosgrain waistband to emphasize the softly flared skirt. Precision-placed mesh lining provides coverage Size: 12. Gender: Female. Age Group: Adult."</p>
+			<h1 class="h2"><%= @product["unbrandedName"] %></h1>
+			<p><h4 class="h4"><%= @product['brand']['name'] %></h4></p>
+			<p><%= @product["description"].html_safe %> </p>
+			<p class="p-price"><%= @product["priceLabel"] %></p>
 		</div>
 	</div>
 </div>
+
+	<div id="popup3" class="overlay">
+    <div class="popup">
+    	<div class="popup-form">
+        <div class="popup-header">
+            <h2 class="h2">Track this item</h2>
+            <a class="close" href="#">&times;</a>
+        </div>
+        <div class="content">
+            <form action="/users/2/wants" method="Post" class="form-popup">
+            	<p><label for="max_price">Max price</label></p>
+              <p><input type="text"></p>
+            	<p><label for="expiration">Expiration</label></p>
+              <p><input type="date"></p>
+            	<p><input type="submit" value="Submit"></p>
+            </form>
+        </div>
+      </div>
+    </div>
+	</div>
+
 </main>

@@ -6,7 +6,11 @@ class ApplicationController < ActionController::Base
   private
 
   def get_user
-    @user = User.find(params[:user_id])
+  	if params[:id]
+    	@user ||= User.find(params[:id])
+    else
+    	@user ||= User.find(params[:user_id])
+    end
   end
 
 end

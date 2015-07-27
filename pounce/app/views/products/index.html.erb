@@ -1,6 +1,6 @@
 <!-- This is where the user will end up after searching for a particular items. Products is an array of product objects -->
 <main class="main">
-	<h2><%= @products.count %></h2><span>search results for "something"</span>
+	<span><span class="h2"><%= @products.count %></span> search results for <span class="h2"><%= params[:search] %></span></span>
 	<div class="js-masonry"  data-masonry-options='{
 	        "itemSelector": ".item",
 	        "transitionDuration": "0.1s"
