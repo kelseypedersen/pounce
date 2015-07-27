@@ -29,6 +29,7 @@ gem 'twilio-ruby'
 
 gem 'dotenv'
 
+# Production Server
 gem 'puma'
 
 # Use ActiveModel has_secure_password
