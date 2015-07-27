@@ -132,7 +132,7 @@ html, body {
 /*Top Page */
 
 .top {
-	background: url("/assets/images/background.jpg");
+	background: url("/app/assets/images/background.jpg");
 	background-size: 100% auto;
 	background-repeat: no-repeat;
 	width:100%;
