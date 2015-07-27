@@ -36,8 +36,12 @@
             <h2 class="h2">Track this item</h2>
             <a class="close" href="#">&times;</a>
         </div>
+
+
+
+
         <div class="content">
-            <form action="/users/2/wants" method="Post" class="form-popup">
+            <form action="/users/<%=@user["id"]%>/wants" method="Post" class="form-popup">
             	<p><label for="max_price">Max price</label></p>
               <p><input type="text" name="max_price"></p>
             	<p><label for="expiration">Expiration</label></p>
@@ -49,6 +53,8 @@
             	<p><input type="submit" value="Submit"></p>
             </form>
         </div>
+
+
       </div>
     </div>
 	</div>
