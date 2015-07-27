@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :current_user
 
   # Show many items following a search
   def index

@@ -36,6 +36,8 @@
             <h2 class="h2">Track this item</h2>
             <a class="close" href="#">&times;</a>
         </div>
+
+
         <div class="content">
         		<%= form_for :wants, method: "POST", url: user_wants_path(current_user) do %>
               <p><%= label_tag(:max_price, "Max price", :class => "label") %></p>
@@ -62,6 +64,8 @@
             	<p><input type="submit" value="Submit"></p>
             </form>  -->
         </div>
+
+
       </div>
     </div>
 	</div>
