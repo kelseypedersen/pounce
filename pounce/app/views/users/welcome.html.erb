@@ -1,75 +1,80 @@
 <script>
-    var header = document.getElementsByClassName('header')[0]
-    header.style.backgroundColor = "transparent"
-    header.style.position = 'absolute';
-    header.style.color = "white";
+
+
     // header.style.marginBottom = "100px";
 </script>
 <div class="top">
     <div class="top-container">
         <h1 class="h1 top-title">Hello</h1>
-        <form method="get" action="/search">
+        <form method="get" action="/products">
             <input type="text" placeholder="Search products" onfocus="this.placeholder = ''"  name="search">
             <input type="submit" value="SEARCH">
         </form>
     </div>
 </div>
 <main class="main">
-    <div id="category" class=" category debug">
+    <div id="category" class="category">
         <h5>Where's the deals?</h5>
         <h4>We've got products in every category around the world.</h4>
-        <div class="inner row collapse debug">
-            <div class="small-12 medium-4 list columns debug fl-l">
+        <div class="inner row collapse js-masonry" data-masonry-options='{
+            "itemSelector": ".list",
+            "transitionDuration": "0.1s"
+         }'>
+            <div class="list columns fl-l">
                 <a href="">
-                    <h3>WOMEN<img src="http://www.houserentals.com/static/houserentals.com/img/home-city-arrow.f3561d41cb1b.png" width="20" height="21" class="arrow"></h3>
-                    <img src="http://www.houserentals.com/static/houserentals.com/img/home-city-new-york.c24daa89656d.jpg" class="city">
+                    <div class="inner">
+                        <h3>WOMEN</h3>
+                        <img src="http://www.houserentals.com/static/houserentals.com/img/home-city-new-york.c24daa89656d.jpg" class="city">
+                    </div>
                 </a>
             </div>
-            <div class="small-12 medium-4 list columns fl-l">
+            <div class="list columns fl-l">
                 <a href="">
-                    <h3>BAGS<img src="http://www.houserentals.com/static/houserentals.com/img/home-city-arrow.f3561d41cb1b.png" width="20" height="21" class="arrow"></h3>
-                    <img src="http://www.houserentals.com/static/houserentals.com/img/home-city-chicago.1f01b0078281.jpg" class="city">
+                    <div class="">
+                        <h3>BAGS</h3>
+                        <img src="http://www.houserentals.com/static/houserentals.com/img/home-city-chicago.1f01b0078281.jpg" class="city">
+                    </div>
                 </a>
             </div>
-            <div class="small-12 medium-4 list columns fl-l">
+            <div class="list columns fl-l">
                 <a href="">
-                    <h3>SHOES<img src="http://www.houserentals.com/static/houserentals.com/img/home-city-arrow.f3561d41cb1b.png" width="20" height="21" class="arrow"></h3>
+                    <h3>SHOES</h3>
                     <img src="http://www.houserentals.com/static/houserentals.com/img/home-city-los-angeles.6034ee9ad16d.jpg" class="city">
                 </a>
             </div>
-            <div class="small-12 medium-4 list columns fl-l">
+            <div class="list columns fl-l ">
                 <a href="">
-                    <h3>BEAUTY<img src="http://www.houserentals.com/static/houserentals.com/img/home-city-arrow.f3561d41cb1b.png" width="20" height="21" class="arrow"></h3>
+                    <h3>BEAUTY</h3>
                     <img src="http://www.houserentals.com/static/houserentals.com/img/home-city-dallas.8716c5f94052.jpg" class="city">
                 </a>
             </div>
-            <div class="show-for-medium-up medium-4 columns">
+            <div class="list columns fl-l">
                 <a href="">
-                    <h3>JEWELRY<img src="http://www.houserentals.com/static/houserentals.com/img/home-city-arrow.f3561d41cb1b.png" width="20" height="21" class="arrow"></h3>
+                    <h3>JEWELRY</h3>
                     <img src="http://www.houserentals.com/static/houserentals.com/img/home-city-boston.3de2c235c4ae.jpg" class="city">
                 </a>
             </div>
-            <div class="show-for-medium-up medium-4 columns">
+            <div class="list columns fl-l">
                 <a href="">
-                    <h3>MEN<img src="http://www.houserentals.com/static/houserentals.com/img/home-city-arrow.f3561d41cb1b.png" width="20" height="21" class="arrow"></h3>
+                    <h3>MEN</h3>
                     <img src="http://www.houserentals.com/static/houserentals.com/img/home-city-philadelphia.d95c7f12d18b.jpg" class="city">
                 </a>
             </div>
-            <div class="show-for-medium-up medium-4 columns">
+            <div class="list columns fl-l">
                 <a href="">
-                    <h3>KIDS<img src="http://www.houserentals.com/static/houserentals.com/img/home-city-arrow.f3561d41cb1b.png" width="20" height="21" class="arrow"></h3>
+                    <h3>KIDS</h3>
                     <img src="http://www.houserentals.com/static/houserentals.com/img/home-city-miami.43dd4699a5e3.jpg" class="city">
                 </a>
             </div>
-            <div class="show-for-medium-up medium-4 columns">
+            <div class="list columns fl-l">
                 <a href="">
-                    <h3>HOME<img src="http://www.houserentals.com/static/houserentals.com/img/home-city-arrow.f3561d41cb1b.png" width="20" height="21" class="arrow"></h3>
+                    <h3>HOME</h3>
                     <img src="http://www.houserentals.com/static/houserentals.com/img/home-city-seattle.81c41daff3a9.jpg" class="city">
                 </a>
             </div>
-            <div class="medium-4 columns show-for-medium-up">
+            <div class="list columns fl-l">
                 <a href="">
-                    <h3>SALES<img src="http://www.houserentals.com/static/houserentals.com/img/home-city-arrow.f3561d41cb1b.png" width="20" height="21" class="arrow"></h3>
+                    <h3>SALES</h3>
                     <img src="http://www.houserentals.com/static/houserentals.com/img/home-city-minneapolis.aaefd10c4dbc.jpg" class="city">
                 </a>
             </div>

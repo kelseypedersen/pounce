@@ -8,18 +8,64 @@
 </head>
 <body>
 	<header class="header">
-		<div class="logo fl-l pd-side-30">Logo</div>
-		<nav class="nav fl-r pd-side-30">
-			<ul>
-				<li>Signin</li>
-				<li>Signup</li>
+      <div class="inner">
+		<div class="logo fl-l">Logo</div>
+		<nav class="nav fl-r">
+			<ul class="">
+				<li class="signin"><a class="button" href="#popup1">Signin</a></li>
+				<li class="signup"><a class="button" href="#popup2">Signup</a></li>
 				<li>About</li>
 			</ul>
 		</nav>
+      </div>
 	</header>
+	<div id="popup1" class="overlay">
+    <div class="popup">
+    	<div class="popup-form">
+        <div class="popup-header">
+            <h2 class="h2">Signin</h2>
+            <a class="close" href="#">&times;</a>
+        </div>
+        <div class="content">
+            <form action="" class="form-popup">
+            	<p><label for="">Email</label></p>
+                <p><input type="text"></p>
+            	<p><label for="">Password</label></p>
+                <p><input type="password"></p>
+            	<p><input type="submit" value="Signin"></p>
+            </form>
+        </div>
+      </div>
+    </div>
+	</div>
+	<div id="popup2" class="overlay">
+    <div class="popup">
+    	<div class="popup-form">
+        <div class="popup-header">
+            <h2 class="h2">Signup</h2>
+            <a class="close" href="#">&times;</a>
+        </div>
+        <div class="content">
+            <form action="">
+            	<p><label for="email" class="label">Email</label></p>
+                <p><input type="text"></p>
+                <p><label for="phonenumber" class="label">Phone Number</label></p>
+                <p><input type="text"></p>
+                <p><label for="password" class="label">Password</label></p>
+                <p><input type="password"></p>
+                 <p><label for="" class="label">Password Confirmation</label></p>
+                <p><input type="password" ></p>
+                <p><input type="submit" value="Signin"></p>
+            </form>
+        </div>
+      </div>
+    </div>
+	</div>
 
 		<%= yield %>
 
+	<footer class="footer cl-b">
 
+	</footer>
 </body>
 </html>

@@ -1,15 +1,15 @@
 <!-- This is where the user will end up after searching for a particular items. Products is an array of product objects -->
 <main class="main">
+	<h2><%= @products.count %></h2><span>search results for "something"</span>
 	<div class="js-masonry"  data-masonry-options='{
-	        "columnWidth": 100,
 	        "itemSelector": ".item",
-	        "transitionDuration": "0.9s"
+	        "transitionDuration": "0.1s"
 	     }'>
 		<% @products.each do |product| %>
-		<a href="">
+		<a href="/products/<%= product["id"] %>">
 			<div class="card fl-l item">
 				<div class="card-img">
-					<img src="<%= product['image']['sizes']['XLarge']['url'] %>" width="<%= product['image']['sizes']['XLarge']['url']['width'] %>" height="<%= product['image']['sizes']['XLarge']['url'] %>">
+					<img src="<%= product['image']['sizes']['XLarge']['url'] %>" >
 				</div>
 				<div class="card-content">
 					<p class="p-name"><%= product["name"] %></p>

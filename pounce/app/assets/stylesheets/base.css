@@ -1,12 +1,18 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic);
 
 
-body {
+/* Base Style*/
+
+html, body {
 	font-family: 'Lato', sans-serif;
+	height:80%;
 	font-weight:400;
 	color: #546E7A;
 	background-color:#f9f9f9;
 }
+
+
+/*------------------ float ---------------------*/
 
 .fl-l {
 	float:left;
@@ -20,16 +26,54 @@ body {
 	clear:both;
 }
 
+.cl-f {
+	clear:fixed;
+}
+
+/*------------------ Basic Font setting ---------------------*/
+
 .h1 {
 	font-weight:700;
 	font-size:32px;
 }
 
+.h2 {
+	font-weight:400;
+	font-size:24px;
+}
+
+.h4 {
+	font-weight:400;
+	font-size:16px;
+	color:#9E9E9E;
+}
+
+.label {
+	color: #757575;
+	font-size:14px;
+	font-weight:700;
+}
+
+
+.debug {
+	border: 1px solid red;
+}
 
 
 
+/*------------------header---------------------*/
 
+.header {
+	width: 100%;
+	height: 70px;
+	border-bottom: 1px solid #EEEEEE;
+	background-color: white;
+}
 
+.header .inner {
+	width: 90%;
+	margin: 0 5% auto;
+}
 
 
 .logo {
@@ -43,31 +87,29 @@ body {
 
 .nav ul li {
 	display:inline;
-	margin-left:20px;
+	margin-left:30px;
 	vertical-align: middle;
 }
 
-.header {
-	width: 100%;
-	height: 70px;
-	border-bottom: 1px solid #EEEEEE;
-	background-color: white;
-}
 
-.pd-side-30 {
-	padding: 0px 5%;
-}
 
-.debug {
-	border: 1px solid red;
-}
+/*------------------ Main ---------------------*/
 
 
 .main {
 	width: 90%;
 	height:100%;
 	margin: 5% auto;
+	padding-bottom:100px;
 }
+
+/*.footer {
+	position:relative;
+	bottom:0;
+	width:100%;
+	height:300px;
+	background-color: #424242;
+}*/
 
 
 
@@ -95,24 +137,25 @@ body {
 .top-title {
 }
 
-input[type="text"] {
+
+
+.top-container input[type="text"] {
 	width:250px;
 	height:50px;
-	padding:0px 25px;
+	padding:0px 10px;
 	color: #546E7A;
-	border:none;
-	outline:none;
 }
 
-input[type="submit"]{
+.top-container input[type="submit"]{
 	width:90px;
 	height:50px;
-	border:none;
-	outline:none;
+	margin-left:-3px;
+	margin-top:-2px;
 	background-color:#0288D1;
+	transition: background-color 0.5s ease;
 }
 
-input[type="submit"]:hover{
+.top-container input[type="submit"]:hover{
 	background-color:#039BE5;
 }
 
@@ -122,11 +165,23 @@ input[type="submit"]:hover{
 }
 
 .category .list {
+	margin:5px;
 	width:300px;
+	height:300px;
 }
 
 .category .list h3{
-	position:relative;
+	position:absolute;
+	color:white;
+	padding:0;
+	margin:0;
+	top:50%;
+	left:40%;
+}
+
+.category .list .inner {
+	width:300px;
+	height:300px;
 }
 
 .category .list .city{
@@ -141,25 +196,34 @@ input[type="submit"]:hover{
 .card {
 	background-color: white;
 	width:300px;
-	margin:20px;
+	margin:10px 20px 10px 0px;
+	height:500px;
 	border-radius: 5px;
 	box-shadow:1px 1px 1px 1px #EEEEEE;
 	/*border: 1px solid #EEEEEE;*/
 }
 
+.item {
+	min-width:280px;
+}
+
 .card img {
 	height: auto;
-	width: 300px;
-	margin:0 auto;
-	padding:0;
+  width: auto;
+  max-width: 260px;
+  max-height: 260px;
+
+	/*padding:0;*/
 }
 
 .card .card-img {
+	width:280px;
+	height:280px;
 	background-color: white;
 }
 
 .card-img img {
-	margin:0 auto;
+	/*margin:100 auto;*/
 }
 
 .card .card-content {
@@ -175,8 +239,105 @@ input[type="submit"]:hover{
 }
 
 .p-price {
-	font-size:18px;
+	font-size:22px;
 	font-weight:700;
 	color: #0288D1;
 }
 
+
+@media only screen and (max-width: 768px) {
+
+		.left {
+			width:100%;
+		}
+
+		.left img {
+			width:100%;
+		}
+
+		.right {
+			width:100%;
+		}
+
+		.right .inner {
+			overflow:visible;
+			width:100%;
+			height:100%;
+		}
+
+}
+
+@media only screen and (min-width: 768px){
+
+	.left {
+		width:40%;
+	}
+
+	.left img {
+		width:100%;
+	}
+
+	.right {
+		width:60%;
+	}
+
+	.right .inner {
+		overflow:visible;
+		margin:0px 20px;
+		padding:0px 40px;
+		width:90%;
+		height:100%;
+	}
+
+}
+
+
+.add-box {
+	text-align:center;
+	color:gray;
+	padding:10px 0px;
+	width:50%;
+	border-bottom:1px solid #EEEEEE;
+	background-color:white;
+	/*border:1px solid #E0E0E0;*/
+}
+
+.add-box:hover {
+	color:#039BE5;
+}
+
+.add-image {
+	padding:0;
+	margin:0;
+}
+
+.add-text {
+	font-weight: 400;
+	font-size:12px;
+	padding:0;
+	margin:0;
+}
+
+
+.box-description {
+	margin-top:100px;
+	letter-spacing: 1px;
+	line-height: 1.3em;
+	padding:30px 50px;
+	background-color:white;
+	height:70%;
+}
+/*Plugin*/
+/*
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+*/
