@@ -22,6 +22,7 @@ window.onload = function(e){
 	    header.style.backgroundColor = "transparent"
 	    header.style.position = 'absolute';
 	    header.style.color = 'white';
+	    header.style.borderStyle = "none";
 	}
 
 	// var container = document.getElementById("masonry");
