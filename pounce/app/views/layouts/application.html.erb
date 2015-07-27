@@ -13,11 +13,15 @@
   		<nav class="nav fl-r">
   			<ul class="">
         <% if current_user %>
-  				<li class="signin"><a class="button" href="#popup1">Signin</a></li>
-  				<li class="signup"><a class="button" href="#popup2">Signup</a></li>
-        <% else %>
+
           <li><a class="button" href="/">Profile</a></li>
-          <li><a class="button" href="/">Logout</a></li>
+          <li><a class="button" href="/logout">Logout</a></li>
+
+        <% else %>
+
+          <li class="signin"><a class="button" href="#popup1">Signin</a></li>
+          <li class="signup"><a class="button" href="#popup2">Signup</a></li>
+
         <% end %>
   			</ul>
   		</nav>
@@ -31,7 +35,7 @@
             <a class="close" href="#">&times;</a>
         </div>
         <div class="content">
-            <form action="" class="form-popup">
+            <form action="/users/login" class="form-popup">
             	<p><label for="">Email</label></p>
                 <p><input type="text"></p>
             	<p><label for="">Password</label></p>
