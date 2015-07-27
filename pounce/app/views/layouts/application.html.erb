@@ -14,7 +14,7 @@
   			<ul class="">
         <% if current_user %>
 
-          <li><a class="button" href="/">Profile</a></li>
+          <li><a class="button" href="/users/<%= current_user.id %>/wants">Profile</a></li>
           <li><a class="button" href="/logout">Logout</a></li>
 
         <% else %>

@@ -3,9 +3,12 @@ class WantsController < ApplicationController
 
   # Post route to create a new want
   def create
-    @product = Product.new(shopstyle_id: params[:shopstyle_id].to_i, title: params[:title], description: params[:description], current_price: params[:current_price].to_f)
+
+    p params
+    @product = Product.new(shopstyle_id: params[:shopstyle_id].to_i, title: params[:title], description: params[:description], current_price: params[:current_price].to_f, image_url: params[:image_url] )
+
     if @product.save
-      @want = Want.new(user_id: @current_user.id, product_id: @product.id, max_price: params[:max_price].to_f, expiration: params[:expiration])
+      @want = Want.new(user_id: @current_user.id, product_id: @product.id, max_price: params[:wants][:max_price].to_f, expiration: params[:wants][:expiration])
       if @want.save
         redirect_to user_wants_path(@current_user)
       end
@@ -35,8 +38,15 @@ class WantsController < ApplicationController
 
   # Display all wants for a particular user
   def index
+
     @fulfilled_wants = Product.where(id: Want.where(user_id: @current_user.id).where(fulfilled: true).pluck(:product_id))
-    @unfulfilled_wants = Product.where(id: Want.where(user_id: @current_user.id).where(fulfilled: true).pluck(:product_id))
+    @unfulfilled_wants = Product.where(id: Want.where(user_id: @current_user.id).where(fulfilled: false).pluck(:product_id))
+    p "*"*80
+    p @fulfilled_wants
+    p "*"*80
+    p "*"*80
+    p @unfulfilled_wants
+    return @unfulfilled_wants
   end
 
 end

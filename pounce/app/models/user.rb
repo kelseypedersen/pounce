@@ -4,15 +4,18 @@ class User < ActiveRecord::Base
   private
 
   def self.create_or_login(params)
-    user = find_or_create_by(email: params[:email])
-    if user.password != nil && user.password == params[:password]
+
+    user = find_or_create_by(email: params[:users][:email])
+
+    if user.password != nil && user.password == params[:users][:password]
+      return user
     end
     if user.password == nil
-      user.name = params[:name]
-      user.password = params[:password]
-      user.phone_number = params[:phone_number]
+      user.name = params[:users][:name]
+      user.password = params[:users][:password]
+      user.phone_number = params[:users][:phone_number]
       user.save!
-      user
+      return user
     end
   end
 
