@@ -327,6 +327,27 @@ html, body {
 	background-color:white;
 	height:70%;
 }
+
+.small-search-box input[type="text"] {
+	width:250px;
+	height:50px;
+	padding:0px 10px;
+	color: #546E7A;
+}
+
+.small-search-box input[type="submit"]{
+	width:90px;
+	height:52px;
+	margin-left:-3px;
+	margin-top:-2px;
+	color:white;
+	background-color:#0288D1;
+	transition: background-color 0.5s ease;
+}
+
+.small-search-box input[type="submit"]:hover{
+	background-color:#039BE5;
+}
 /*Plugin*/
 /*
 #lean_overlay {

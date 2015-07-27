@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :wants , only: [:create, :edit, :update, :destroy, :index]
   end
   resources :products, only: [:index, :show]
-  get 'users/login', to: 'sessions#create'
+  post 'users/login', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'
 
   # Example of regular route:

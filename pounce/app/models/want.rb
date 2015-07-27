@@ -8,7 +8,7 @@ class Want < ActiveRecord::Base
   def self.checking
   wants = Want.all
   wants.each do |want|
-    client = HTTParty.get("http://api.shopstyle.com/api/v2/products/#{want.product.shopstyle_id}?pid=ENV["SHOPSTYLE_TOKEN"]")
+    client = HTTParty.get("http://api.shopstyle.com/api/v2/products/#{want.product.shopstyle_id}?pid=ENV['SHOPSTYLE_TOKEN']")
     currentShopstylePrice = client["priceLabel"]
     if (currentShopstylePrice == "Sold Out")
     else
@@ -57,5 +57,5 @@ def self.notification
   end
 end
 
-end
+
 
