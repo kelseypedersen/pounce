@@ -35,13 +35,13 @@
             <a class="close" href="#">&times;</a>
         </div>
         <div class="content">
-            <form action="/users/login" class="form-popup">
-            	<p><label for="">Email</label></p>
-                <p><input type="text"></p>
-            	<p><label for="">Password</label></p>
-                <p><input type="password"></p>
-            	<p><input type="submit" value="Signin"></p>
-            </form>
+            <%= form_tag({controller: "sessions", action: "create"}, method: "POST") do %>
+              <p><%= label_tag(:email, "Email", :class => "label") %></p>
+              <p><%= text_field(:users, :email) %></p>
+              <p><%= label :password, "Password", :class => "label" %></p>
+              <p><%= password_field(:users,:password) %></p>
+              <p><input type="submit" value="Signin"></p>
+            <% end %>
         </div>
       </div>
     </div>
