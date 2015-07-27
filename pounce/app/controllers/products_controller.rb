@@ -10,7 +10,9 @@ class ProductsController < ApplicationController
 
   # Details about a particular product
   def show
-     @product = HTTParty.get("http://api.shopstyle.com/api/v2/products/#{params[:product_id].to_i}?pid=uid5001-30368749-95")
+     # @product = HTTParty.get("http://api.shopstyle.com/api/v2/products/#{params[:product_id]}?pid=uid5001-30368749-95")
   end
 
 end
+
+# http://api.shopstyle.com/api/v2/products/480234994?pid=uid5001-30368749-95
