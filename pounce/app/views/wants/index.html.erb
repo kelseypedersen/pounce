@@ -1,11 +1,11 @@
 <!-- This is where we will show a list of user wants. The user object will be passed back. You will also have access to their list of fulfilled and unfulfilled wants as arrays.-->
 <main class="main">
-	<h2><%= @products.count %></h2><span>search results for "something"</span>
+	<span><span class="h2"><%= @fulfilled_wants.count %></span> search results for "something"</span>
 	<div class="js-masonry"  data-masonry-options='{
 	        "itemSelector": ".item",
 	        "transitionDuration": "0.1s"
 	     }'>
-		<% @products.each do |product| %>
+		<% @fulfilled_wants.each do |product| %>
 		<a href="/products/<%= product["id"] %>">
 			<div class="card fl-l item">
 				<div class="card-img">
