@@ -43,7 +43,7 @@
 
 }
 
-.popup-form input[type="text"] {
+.popup-form input[type="text"],.popup-form input[type="password"] , .popup-form input[type="date"]{
   height:30px;
   width:250px;
   padding:4px 12px;
@@ -51,15 +51,8 @@
   transition: border 0.5s ease;
 }
 
-.popup-form input[type="password"] {
-  height:30px;
-  width:250px;
-  padding:4px 12px;
-  /*border-radius:2px;*/
-}
-
 .popup-form input[type="text"]:focus,
-.popup-form input[type="password"]:focus {
+.popup-form input[type="password"]:focus, {
   border:1px solid #0288D1;
 }
 

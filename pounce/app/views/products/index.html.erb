@@ -1,10 +1,8 @@
 <!-- This is where the user will end up after searching for a particular items. Products is an array of product objects -->
 <main class="main">
 	<span><span class="h2"><%= @products.count %></span> search results for <span class="h2"><%= params[:search] %></span></span>
-	<div class="js-masonry"  data-masonry-options='{
-	        "itemSelector": ".item",
-	        "transitionDuration": "0.1s"
-	     }'>
+
+	<div id="masonry" >
 		<% @products.each do |product| %>
 		<a href="/products/<%= product["id"] %>">
 			<div class="card fl-l item">

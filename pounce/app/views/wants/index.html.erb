@@ -10,12 +10,7 @@
 		<span>You have <span class="h2"><%= @unfulfilled_wants.count %></span> wants items</span>
 	</div>
 
-	<div class="js-masonry cl-b"  data-masonry-options='{
-					"columnWidth" : "300",
-	        "itemSelector": ".item",
-	        "gutterWidth": "300",
-	        "transitionDuration": "0.1s"
-	     }'>
+	<div id="masonry" class="cl-b" >
 		<% @unfulfilled_wants.each do |product| %>
 		<a href="/products/<%= product["shopstyle_id"] %>">
 			<div class="card fl-l item">

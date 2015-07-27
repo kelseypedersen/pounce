@@ -218,34 +218,39 @@ html, body {
 	background-color: white;
 	width:300px;
 	margin:10px 20px 10px 0px;
-	/*height:500px;*/
+	height:500px;
 	border-radius: 5px;
 	box-shadow:1px 1px 1px 1px #EEEEEE;
 	/*border: 1px solid #EEEEEE;*/
 }
 
 .item {
-	min-width:280px;
+	width:300px;
 	height:auto;
+	disply: inline-block;
 }
 
-.card-img img {
-	height: auto;
-	width:100%;
-  max-width: 300px;
- /* max-height: 260px;*/
-  margin:20 auto;
+#masonry {
+	position:relative;
+	disply: block;
+  width: 100%;
 }
 
 .card .card-img {
 	width:300px;
 	/*height:300px;*/
+	height:auto;
 	background-color: white;
 }
 
 .card-img img {
-	/*margin:100 auto;*/
+	height: auto;
+	width:100%;
+/*  max-width: 300px;
+  max-height: 260px;*/
+/*  margin:20 auto;*/
 }
+
 
 .card .card-content {
 	padding:30px;
