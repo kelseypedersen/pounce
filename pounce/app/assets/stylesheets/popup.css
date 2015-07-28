@@ -101,4 +101,16 @@
   height:100%;
 }
 
+.alert-box {
+  text-align:center;
+  padding-bottom:30px;
+}
+
+
+.alert-box ul li{
+  font-size:20px;
+  display:inline;
+  margin-right:30px;
+  text-decoration:underline;
+}
 
